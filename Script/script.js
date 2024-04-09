@@ -1,16 +1,16 @@
-const eyeIcon = document.getElementById("eyeIcon");
-// console.log("eyeIcon");
-const passwordConnexion = document.getElementById("passwordConnexion");
+// const eyeIcon = document.getElementById("eyeIcon");
+// // console.log("eyeIcon");
+// const passwordConnexion = document.getElementById("passwordConnexion");
 
-eyeIcon.onclick = function () {
-    passwordConnexion.type = passwordConnexion.type === "password" ? "text" : "password";
-    eyeIcon.src = passwordConnexion.type === "password" ? "/Images/eye-open.png" : "/Images/eye-close.png";
+// eyeIcon.onclick = function () {
+//     passwordConnexion.type = passwordConnexion.type === "password" ? "text" : "password";
+//     eyeIcon.src = passwordConnexion.type === "password" ? "/Images/eye-open.png" : "/Images/eye-close.png";
 
-}
+// }
 
 document.getElementById("inscriptionForm").addEventListener("submit", function (event) {
     // Récupérer les valeurs des champs
-    const nom_utilisateur = document.getElementById("nom_utilisateur").value;
+    const nom_utilisateur = document.getElementById("username").value;
     const email = document.getElementById("email").value;
     const mot_de_passe = document.getElementById("mot_de_passe").value;
     const confirmation_mot_de_passe = document.getElementById("confirmation_mot_de_passe").value;
@@ -36,8 +36,10 @@ document.getElementById("inscriptionForm").addEventListener("submit", function (
         return;
     }
 });
-const submitValider = document.getElementById("submitValider");
-console.log(submitValider);
+// const submitValider = document.getElementById("submitValider");
+// console.log(submitValider);
+
+
 function afficherMessage() {
 
     alert("Données enregistrées avec succès !");

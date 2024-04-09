@@ -1,12 +1,10 @@
 <?php
 // Vérifier si l'utilisateur est connecté avant d'afficher cette page
 session_start();
-if (!isset ($_SESSION['utilisateur_connecte']) || !$_SESSION['utilisateur_connecte']) {
-    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-    header('Location: connection.php');
+if (empty($_SESSION['utilisateur_connecte'])) {
+    header('Location: ../php/sign_in.php');
     exit;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,22 +15,35 @@ if (!isset ($_SESSION['utilisateur_connecte']) || !$_SESSION['utilisateur_connec
     <title>Accueil page Pongmaster</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style_pongmaster.css" />
-
+    <link rel="stylesheet" href="/styles/style_pongmaster.css" />
 </head>
 
 <body>
+
     <h1>Bienvenue sur la page d'accueil de Pongmaster ! </h1>
 
     <div class="form-container">
-        <form id="inscriptionForm" action="php/pongmaster_traitement.php" method="post" autocomplete="off">
+        <?php
+        // Afficher les erreurs s'il y en a
+        if (isset($_SESSION['message_succes'])) {
+            echo '<div class="alert alert-success" role="alert">' . $_SESSION['message_succes'] . '</div>';
+            unset($_SESSION['message_succes']); // Effacer le message après l'avoir affiché
+        }
+        ?>
+        <div class="button-container">
+            <button type="button" class="btn btn-danger"
+                onclick="window.location.href='../php/sign_in.php'">Déconnexion</button>
+        </div>
+
+        <form id="inscriptionForm" action="../php/pongmaster_traitement.php" method="POST" autocomplete="off">
+            <!-- Ajoutez ici les autres champs du formulaire -->
             <label for="exercice">Exercice :</label>
             <select name="exercice" id="exercice">
+                <option value="none">-- Aucune --</option>
                 <option value="Topspin">Topspin</option>
                 <option value="Attaque">Attaque</option>
                 <option value="Défense">Défense</option>
             </select><br /><br />
-
             <label for="numero">Numéro :</label>
             <select name="numero" id="numero">
                 <option value="1">1</option>
@@ -104,19 +115,17 @@ if (!isset ($_SESSION['utilisateur_connecte']) || !$_SESSION['utilisateur_connec
                 <option value="Z8">Z8</option>
             </select><br /><br />
 
-            <div class="button-container">
-                <button type="button" class="btn btn-danger"
-                    onclick="window.location.href='index.php'">Déconnexion</button>
-                <button type="submit" id="submitValider" class=" btn btn-info"
-                    onclick="afficherMessage()">Valider</button>
-            </div>
+            <!-- Bouton de soumission du formulaire -->
+            <button type="submit" id="submitValider" class="btn btn-primary"
+                onclick="afficherMessage()">Valider</button>
         </form>
     </div>
+    <!-- Inclure Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <!-- Inclure votre script JavaScript personnalisé -->
+    <script src="../Script/script.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-<script src="/Script/script.js"></script>
-
 
 </html>

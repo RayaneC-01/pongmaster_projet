@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 20 fév. 2024 à 12:11
+-- Généré le : mar. 09 avr. 2024 à 02:41
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `exercices` (
   `zones_impact` varchar(20) NOT NULL,
   `date_enregistrement` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=124 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -94,6 +94,21 @@ INSERT INTO `joueurs` (`id`, `numero_badge`, `nom`, `prenom`, `categorie_age`, `
 (1, 'RFID5678', 'Dupont', 'Alice', 'Jeune', 'Compétition'),
 (2, 'RFID91011', 'Martin', 'Paul', 'Adulte', 'Loisir'),
 (3, 'RFID121314', 'Dubois', 'Sophie', 'Senior', 'Loisir');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateurs`
+--
+
+DROP TABLE IF EXISTS `utilisateurs`;
+CREATE TABLE IF NOT EXISTS `utilisateurs` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `mot_de_passe` varchar(255) DEFAULT NULL,
+  `email` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -5,7 +5,6 @@
 // eyeIcon.onclick = function () {
 //     passwordConnexion.type = passwordConnexion.type === "password" ? "text" : "password";
 //     eyeIcon.src = passwordConnexion.type === "password" ? "/Images/eye-open.png" : "/Images/eye-close.png";
-
 // }
 
 document.getElementById("inscriptionForm").addEventListener("submit", function (event) {

@@ -19,7 +19,7 @@ if (empty($_SESSION['utilisateur_connecte'])) {
 </head>
 
 <body>
-    <h1>Bienvenue sur la page d'accueil de Pongmaster ! </h1>
+    <h1> Bienvenue sur la page d'accueil de Pongmaster ! </h1>
 
     <div class="form-container">
         <?php

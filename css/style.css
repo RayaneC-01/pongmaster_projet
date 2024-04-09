@@ -79,7 +79,6 @@ button:hover {
 .login-link > a,
 .signup-link > a {
   color: #007bff;
-  font-size: 15px;
   text-decoration: none;
 }
 .password-input {

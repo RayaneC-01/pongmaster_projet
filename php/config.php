@@ -1,4 +1,5 @@
 <?php
+
 // Configuration de la base de données
 // Informations de connexion à la base de données
 $DB_SERVER = 'localhost'; // Adresse du serveur MySQL

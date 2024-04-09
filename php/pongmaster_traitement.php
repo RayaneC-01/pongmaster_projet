@@ -33,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $insert_query->bindParam(':nombre_cibles', $nombre_cibles);
         $insert_query->bindParam(':animation_cibles', $animation_cibles);
         $insert_query->bindParam(':zones_impact', $zones_impact);
-
         // Exécuter la requête
         $insert_query->execute();
 

@@ -15,14 +15,31 @@ if (empty($_SESSION['utilisateur_connecte'])) {
     <title>Accueil page Pongmaster</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/style_pongmaster.css" />
+    <link rel="stylesheet" href="/CSS/style_pongmaster.css" />
 </head>
 
 <body>
 
-    <h1>Bienvenue sur la page d'accueil de Pongmaster ! </h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.php">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="form-container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php">Accueil</a>
+                </li>
+                <a href="../php/sign_in.php" class="btn btn-danger" role="button">Déconnexion</a>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="h2">Bienvenue sur la page d'accueil de Pongmaster ! </h1>
+
+
+    <div class="container">
         <?php
         // Afficher les erreurs s'il y en a
         if (isset($_SESSION['message_succes'])) {
@@ -30,10 +47,6 @@ if (empty($_SESSION['utilisateur_connecte'])) {
             unset($_SESSION['message_succes']); // Effacer le message après l'avoir affiché
         }
         ?>
-        <div class="button-container">
-            <button type="button" class="btn btn-danger"
-                onclick="window.location.href='../php/sign_in.php'">Déconnexion</button>
-        </div>
 
         <form id="inscriptionForm" action="../php/pongmaster_traitement.php" method="POST" autocomplete="off">
             <!-- Ajoutez ici les autres champs du formulaire -->
@@ -123,7 +136,7 @@ if (empty($_SESSION['utilisateur_connecte'])) {
     <!-- Inclure Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
     <!-- Inclure votre script JavaScript personnalisé -->
     <script src="../Script/script.js"></script>
 </body>

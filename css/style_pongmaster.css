@@ -7,13 +7,13 @@ body {
   margin: 0;
 }
 
-.form-container {
-  width: 50%;
+.container {
+  width: 60%;
   padding: 20px;
   border-radius: 10px;
-  border: 2px solid #ff0000;
+  border: 5px solid #333;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin-top: -30px;
+  margin: 20px;
   text-align: center;
 }
 

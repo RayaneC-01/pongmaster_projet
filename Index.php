@@ -20,7 +20,7 @@ if (empty($_SESSION['utilisateur_connecte'])) {
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="index.php">Logo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@ if (empty($_SESSION['utilisateur_connecte'])) {
             </ul>
         </div>
     </nav>
-    <h1 class="h2">Bienvenue sur la page d'accueil de Pongmaster ! </h1>
+    <h1 class="display-5">Bienvenue sur la page d'accueil de Pongmaster ! </h1>
 
 
     <div class="container">
@@ -129,7 +129,7 @@ if (empty($_SESSION['utilisateur_connecte'])) {
             </select><br /><br />
 
             <!-- Bouton de soumission du formulaire -->
-            <button type="submit" id="submitValider" class="btn btn-primary"
+            <button type="submit" id="submitValider" class="btn btn-primary btn-lg"
                 onclick="afficherMessage()">Valider</button>
         </form>
     </div>
